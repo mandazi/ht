@@ -13,10 +13,10 @@
     "url": "https://github.com/mandazi/ht/issues"
   },
   "homepage": "https://github.com/mandazi/ht#readme",
-  "dependencies":{
+  "dependencies": {
     "express": "latest",
     "body-parser": "latest",
     "parse": "latest",
     "express-handlebars":"latest"
-  },
+  }
 }
