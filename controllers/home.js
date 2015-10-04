@@ -1,7 +1,7 @@
 var Parse = require('parse/node');
 var config = require('../config');
 
-Parse.initialize(config.parse.appid, config.parse.jskey);
+Parse.initialize(process.env.PARSEAPPID || config.parse.appid, process.env.PARSEJSKEY || config.parse.jskey);
 
 // Home page
 module.exports.index = function(req,res){
