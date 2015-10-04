@@ -2,12 +2,10 @@
 var express = require('express');
 var	app = express();
 var bodyParser = require('body-parser');
-
-// Check for AWS Elastic Beanstalk environment value
-if ( process.env.LOCALHOST == null){
-  // If it's not set that means we are running localhost
-  // Used to check whether or not to inlcude localhost config file
-  process.env.LOCALHOST = true;
+// Check if we are on on AWS or not
+if (process.env.AWS == null || !process.env.AWS) {
+  // get the process environment variables for localhost
+  var config = require('./config');
 }
 
 // Access the body posts content
