@@ -1,0 +1,22 @@
+{
+  "name": "ht",
+  "version": "1.0.0",
+  "description": "ht",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mandazi/ht.git"
+  },
+  "author": "Amir Sahib",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/mandazi/ht/issues"
+  },
+  "homepage": "https://github.com/mandazi/ht#readme",
+  "dependencies":{
+    "express": "latest",
+    "body-parser": "latest",
+    "parse": "latest",
+    "express-handlebars":"latest"
+  },
+}
