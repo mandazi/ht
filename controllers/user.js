@@ -18,7 +18,6 @@ module.exports.loginProcess = function(req,res){
       res.render('home/index');
     },
     error: function(user, error) {
-      console.log('error',error);
       res.render('user/login', error, {layout:'login.hbs'});
     }
   });
