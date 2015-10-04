@@ -13,7 +13,7 @@ module.exports.loginProcess = function(req,res){
 
   Parse.User.logIn(req.body.username, req.body.password, {
     success: function(user) {
-      res.render('home/index');
+      res.redirect('/');
     },
     error: function(user, error) {
       res.render('user/login', error, {layout:'login.hbs'});

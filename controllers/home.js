@@ -5,7 +5,7 @@ Parse.initialize(process.env.PARSEAPPID, process.env.PARSEJSKEY);
 module.exports.index = function(req,res){
   var currentUser = Parse.User.current();
   if (currentUser) {
-    res.render('home/index');
+    res.redirect('home/index');
   } else {
     res.redirect('/login');
   }
