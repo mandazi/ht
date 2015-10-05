@@ -3,7 +3,6 @@ Parse.initialize(process.env.PARSEAPPID, process.env.PARSEJSKEY);
 
 // Login page
 module.exports.login = function(req,res){
-
   res.render('user/login', {layout: 'login.hbs'});
 
 };
@@ -13,10 +12,11 @@ module.exports.loginProcess = function(req,res){
 
   Parse.User.logIn(req.body.username, req.body.password, {
     success: function(user) {
+      req.session.userid = user.id;
       res.redirect('/');
     },
     error: function(user, error) {
-      res.render('user/login', error, {layout:'login.hbs'});
+      res.render('user/login', {layout: 'login.hbs', error: error});
     }
   });
 
@@ -27,7 +27,6 @@ module.exports.loginProcess = function(req,res){
 module.exports.signup = function(req,res){
 
   res.render('user/signup', {layout: 'login.hbs'});
-
 };
 
 // Registration process
@@ -43,9 +42,7 @@ module.exports.signupProcess = function(req,res){
       res.redirect('/');
     },
     error: function(user, error) {
-      // Show the error message somewhere and let the user try again.
-      alert("Error: " + error.code + " " + error.message);
-      res.render('user/signup',error,{layout: 'login.hbs'});
+      res.render('user/signup',{layout: 'login.hbs', error: error});
     }
   });
 };
@@ -53,6 +50,6 @@ module.exports.signupProcess = function(req,res){
 
 // Logout process
 module.exports.logout = function(req,res){
-  Parse.User.logOut();
+  req.session.destroy();
   res.redirect('/login');
 };

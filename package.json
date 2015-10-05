@@ -17,6 +17,8 @@
     "express": "latest",
     "body-parser": "latest",
     "parse": "latest",
-    "express-handlebars":"latest"
+    "express-handlebars":"latest",
+    "cookie-parser":"latest",
+    "express-session":"latest"
   }
 }
